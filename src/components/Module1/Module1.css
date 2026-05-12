@@ -1,0 +1,168 @@
+/* ModuleOverview.css */
+
+.module-overview-container {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  margin-top: 40px;
+}
+
+.back-button {
+  font-weight: 600 !important;
+  color: black !important;
+  margin-right: 0 !important;
+  border: 1px solid #ccc !important;
+  border-radius: 5px !important;
+}
+
+.back-button:hover {
+  color: black !important;
+}
+
+.back-button:focus {
+  color: black !important;
+}
+
+.module-overview-header {
+  background: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.module-overview-header .card-body {
+  padding: 2rem;
+}
+
+.module-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.module-title-section {
+  text-align: center;
+  min-width: 0;
+}
+.module-title-section h1 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.module-description {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.module-stats {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.module-status {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.sections-title {
+  color: #333;
+  font-weight: bold;
+  margin: 2rem 0 1.5rem 0;
+  font-size: 1.5rem;
+}
+
+.sections-grid {
+  margin-bottom: 2rem;
+}
+
+.section-card-col {
+  margin-bottom: 1.5rem;
+}
+
+.section-overview-card {
+  height: 100%;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: white;
+  padding: 0;
+}
+
+.section-overview-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+  transform: translateY(-5px);
+}
+
+.section-overview-card.locked {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #f8f9fa;
+}
+
+.section-overview-card.locked:hover {
+  transform: none;
+  border-color: #e9ecef;
+}
+
+.section-overview-card .card-body {
+  padding: 1.5rem;
+}
+
+.section-header-overview {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.section-name {
+  color: #333;
+  font-weight: bold;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.section-desc-small {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.lock-message {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .module-overview-container {
+    padding: 1rem;
+  }
+
+  .module-title-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .sections-title {
+    font-size: 1.2rem;
+  }
+}
