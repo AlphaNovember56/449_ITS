@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, Button, Row, Col } from 'react-bootstrap';
@@ -16,13 +12,13 @@ interface Module1Props {
 
 export const Module1: React.FC<Module1Props> = ({ onUpdateModule }) => {
   const navigate = useNavigate();
-  const [module, setModule] = useState<Module>(JSON.parse(JSON.stringify(module1Data)));
+  const [module, setModule] = useState<Module>(JSON.parse(JSON.stringify(module1Data)) as Module);
 
   // Load from localStorage if available
   useEffect(() => {
     const saved = localStorage.getItem('module1-state');
     if (saved) {
-      setModule(JSON.parse(saved));
+      setModule(JSON.parse(saved) as Module);
     }
   }, []);
 
@@ -67,7 +63,7 @@ export const Module1: React.FC<Module1Props> = ({ onUpdateModule }) => {
   return (
     <div className="module-overview-container">
       <Button
-              onClick={() => navigate('/')}
+              onClick={() => void navigate('/')}
               className="back-button"
               size="sm"
             >
@@ -110,9 +106,9 @@ export const Module1: React.FC<Module1Props> = ({ onUpdateModule }) => {
               className="section-overview-card unlocked"
               onClick={() => {
                 if (section.id === 1) {
-                  navigate('/module/1/pretest1');
+                  void navigate('/module/1/pretest1');
                 } else {
-                  navigate(`/module/1/section/${section.id}`);
+                  void navigate(`/module/1/section/${section.id}`);
                 }
               }}
             >
@@ -134,9 +130,9 @@ export const Module1: React.FC<Module1Props> = ({ onUpdateModule }) => {
                   className="w-100 mt-2"
                   onClick={() => {
                     if (section.id === 1) {
-                      navigate('/module/1/pretest1');
+                      void navigate('/module/1/pretest1');
                     } else {
-                      navigate(`/module/1/section/${section.id}`);
+                      void navigate(`/module/1/section/${section.id}`);
                     }
                   }}
                 >

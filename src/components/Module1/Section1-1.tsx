@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Card, Alert, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { Question } from '../../types';
+import type { Question } from '../../types';
 import '../styles/Pretest.css';
 
 interface Section1Part1Props {
@@ -88,8 +88,10 @@ export function Section1Part1({ moduleId, questions, pretestCorrectAnswers, onSe
 
   // Expose clear function to window for quick console testing
   React.useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
     (window as any).clearSection1_1Storage = clearSection1_1LocalStorage;
     return () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
       delete (window as any).clearSection1_1Storage;
     };
   }, []);
@@ -210,7 +212,7 @@ export function Section1Part1({ moduleId, questions, pretestCorrectAnswers, onSe
 
               <Button
                 variant="primary"
-                onClick={() => navigate(`/module/${moduleId}`)}
+                onClick={() => void navigate(`/module/${moduleId}`)}
                 className="w-100"
               >
                 Return to Module Overview
@@ -273,14 +275,14 @@ export function Section1Part1({ moduleId, questions, pretestCorrectAnswers, onSe
             <button onClick={() => void navigate(`/module/${moduleId}`)} className="back-button">
               ← Back to Module Overview
             </button>
-            <button 
+            {/* <button 
               onClick={clearSection1_1LocalStorage} 
               className="back-button"
               style={{ backgroundColor: '#dc3545', fontSize: '0.875rem' }}
               title="Clear localStorage for testing"
             >
               🧹 Clear Storage
-            </button>
+            </button> */}
           </div>
           <div className="header-top">
             <h1 className="header-title">Section 1.1 Quiz</h1>

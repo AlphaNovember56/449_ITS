@@ -48,7 +48,7 @@ export default defineConfig([
 
             // https://typescript-eslint.io/rules/no-unsafe-assignment
             // Disallow assigning any type to a variable of a specific type.
-            "@typescript-eslint/no-unsafe-assignment": "off",
+            "@typescript-eslint/no-unsafe-assignment": "error",
 
             // https://typescript-eslint.io/rules/no-restricted-types
             // Disallow certain types.

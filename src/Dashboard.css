@@ -76,6 +76,11 @@
 
 .modules-grid {
   margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 1.5rem;
 }
 
 .module-col {
@@ -171,6 +176,29 @@
 .dashboard-info li {
   margin-bottom: 0.8rem;
   line-height: 1.6;
+}
+
+.module-card .btn-primary {
+  background-color: #667eea;
+  border-color: #667eea;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.module-card .btn-primary:hover {
+  background-color: #5568d3;
+  border-color: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.module-card .btn-primary:focus {
+  background-color: #5568d3;
+  border-color: #5568d3;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
 }
 
 @media (max-width: 768px) {

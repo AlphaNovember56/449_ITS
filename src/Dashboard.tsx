@@ -1,8 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Dashboard.css';
 import { Container, Row, Col, Card, Button, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +15,7 @@ function Dashboard() {
     const savedModules = localStorage.getItem('modules');
     if (savedModules) {
       try {
-        setModules(JSON.parse(savedModules));
+        setModules(JSON.parse(savedModules) as Module[]);
       } catch (error) {
         console.error('Error loading modules from storage:', error);
       }
@@ -32,7 +28,7 @@ function Dashboard() {
   }, [modules]);
 
   const handleModuleClick = (moduleId: number) => {
-    navigate(`/module/${moduleId}`);
+    void navigate(`/module/${moduleId}`);
   };
 
   const completedModules = modules.filter((mod) => mod.overallProgress === 100).length;

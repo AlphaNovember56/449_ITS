@@ -1,12 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import React, { useState } from 'react';
 import { Button, Card, Alert, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import type { Question } from '../../types';
 
 import '../styles/Pretest.css';
+
+interface PretestWindow extends Window {
+  clearPretestStorage?: () => void;
+}
 
 interface Pretest1Props {
   module1: number;
@@ -33,11 +34,10 @@ export function Pretest1({ module1, questions, onComplete }: Pretest1Props) {
     console.log('Pretest localStorage cleared');
   };
   React.useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).clearPretestStorage = clearPretestLocalStorage;
+    const pretestWindow = window as PretestWindow;
+    pretestWindow.clearPretestStorage = clearPretestLocalStorage;
     return () => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      delete (window as any).clearPretestStorage;
+      delete pretestWindow.clearPretestStorage;
     };
   }, []);
 
@@ -88,7 +88,7 @@ export function Pretest1({ module1, questions, onComplete }: Pretest1Props) {
       
       // Navigate after a short delay to ensure data is persisted
       setTimeout(() => {
-        navigate(`/module/${module1}`);
+        void navigate(`/module/${module1}`);
       }, 100);
     }
   };

@@ -82,6 +82,12 @@
 
 .sections-grid {
   margin-bottom: 2rem;
+  display: fixed;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 1.5rem;
 }
 
 .section-card-col {
@@ -151,6 +157,32 @@
   text-align: center;
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+.section-overview-card .btn-primary,
+.module-overview-header .btn-primary {
+  background-color: #667eea;
+  border-color: #667eea;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.section-overview-card .btn-primary:hover,
+.module-overview-header .btn-primary:hover {
+  background-color: #5568d3;
+  border-color: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.section-overview-card .btn-primary:focus,
+.module-overview-header .btn-primary:focus {
+  background-color: #5568d3;
+  border-color: #5568d3;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
 }
 
 @media (max-width: 768px) {
