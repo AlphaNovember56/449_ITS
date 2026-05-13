@@ -38,8 +38,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/module/1" element={<Module1 />} />
+        <Route path="/449_ITS/" element={<Dashboard />} />
+        <Route path="/449_ITS/module/1" element={<Module1 />} />
         <Route
           path="/module/1/pretest1"
           element={
