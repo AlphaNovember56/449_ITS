@@ -3,24 +3,24 @@
 .module-overview-container {
   min-height: 100vh;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  margin-top: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .back-button {
   font-weight: 600 !important;
-  color: black !important;
-  margin-right: 0 !important;
-  border: 1px solid #ccc !important;
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
   border-radius: 5px !important;
 }
 
 .back-button:hover {
-  color: black !important;
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
 .back-button:focus {
-  color: black !important;
+  color: white !important;
 }
 
 .module-overview-header {
@@ -29,6 +29,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  margin-top: 40px;
 }
 
 .module-overview-header .card-body {
@@ -74,7 +75,7 @@
 }
 
 .sections-title {
-  color: #333;
+  color: white;
   font-weight: bold;
   margin: 2rem 0 1.5rem 0;
   font-size: 1.5rem;
@@ -92,6 +93,26 @@
 
 .section-card-col {
   margin-bottom: 1.5rem;
+}
+
+.section-card {
+  height: 100%;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+  transform: translateY(-5px);
+}
+
+.section-card .card-body {
+  padding: 1.5rem;
 }
 
 .section-overview-card {

@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Module1 from './components/Module1/Module1';
 import { Pretest1 } from './components/Module1/Pretest1';
+import { Posttest1 } from './components/Module1/Posttest';
 import { Section1Part1 } from './components/Module1/Section1-1';
-import { module1PretestQuestions, section1_1Questions } from './components/Module1/module1-questions';
+import { module1PretestQuestions, section1_1Questions, module1PosttestQuestions } from './components/Module1/module1-questions';
 import './App.css';
 
 interface PretestResult {
@@ -62,6 +63,18 @@ function App() {
               onSectionComplete={() => {
                 console.log('Section 1.1 completed');
               }}
+            />
+          }
+        />
+        <Route
+          path="/module/1/posttest1"
+          element={
+            <Posttest1
+              module1={1}
+              questions={module1PosttestQuestions}
+              onComplete={(score, correctAnswers) =>
+                console.log(`Posttest Complete - Score: ${score}, Correct Answers: ${correctAnswers}`)
+              }
             />
           }
         />

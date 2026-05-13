@@ -62,15 +62,15 @@ export const Module1: React.FC<Module1Props> = ({ onUpdateModule }) => {
 
   return (
     <div className="module-overview-container">
-      <Button
+      
+      <Card className="module-overview-header">
+        <Button
               onClick={() => void navigate('/')}
               className="back-button"
               size="sm"
             >
               ← Back to Dashboard
             </Button>
-      <Card className="module-overview-header">
-        
         <Card.Body>
           <div className="module-header-top">
             <div className="module-title-section">
@@ -102,16 +102,7 @@ export const Module1: React.FC<Module1Props> = ({ onUpdateModule }) => {
       <Row className="sections-grid">
         {module.sections.map((section) => (
           <Col md={6} lg={4} key={section.id} className="section-card-col">
-            <Card
-              className="section-overview-card unlocked"
-              onClick={() => {
-                if (section.id === 1) {
-                  void navigate('/module/1/pretest1');
-                } else {
-                  void navigate(`/module/1/section/${section.id}`);
-                }
-              }}
-            >
+            <Card className="section-card">
               <Card.Body>
                 <div className="section-header-overview">
                   <h5 className="section-name">{section.title}</h5>
@@ -131,6 +122,8 @@ export const Module1: React.FC<Module1Props> = ({ onUpdateModule }) => {
                   onClick={() => {
                     if (section.id === 1) {
                       void navigate('/module/1/pretest1');
+                    } else if (section.id === 3) {
+                      void navigate('/module/1/posttest1');
                     } else {
                       void navigate(`/module/1/section/${section.id}`);
                     }

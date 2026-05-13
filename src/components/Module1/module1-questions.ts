@@ -108,6 +108,65 @@ const section1_1Questions: Question[] = [
   },
 ];
 
+// Module 1 Posttest Questions
+const module1PosttestQuestions: Question[] = [
+  {
+    id: 1,
+    question: 'What is an event in JavaScript?',
+    options: [
+      'A function that runs on a schedule',
+      'Something that happens in response to user interaction or system action',
+      'A variable that stores a value',
+      'A method to style HTML elements',
+    ],
+    correctAnswer: 1,
+  },
+  {
+    id: 2,
+    question: 'Which of the following is a valid event type?',
+    options: [
+      'execute',
+      'respond',
+      'click',
+      'activate',
+    ],
+    correctAnswer: 2,
+  },
+  {
+    id: 3,
+    question: 'What does "user interaction" include?',
+    options: [
+      'Only clicking',
+      'Clicking, hovering, typing, and scrolling',
+      'Only typing',
+      'Only scrolling',
+    ],
+    correctAnswer: 1,
+  },
+  {
+    id: 4,
+    question: 'How many events can a single HTML element respond to?',
+    options: [
+      'Only one',
+      'Maximum of three',
+      'Multiple events',
+      'None',
+    ],
+    correctAnswer: 2,
+  },
+  {
+    id: 5,
+    question: 'What is event propagation?',
+    options: [
+      'The spreading of events across multiple computers',
+      'The path an event takes through the DOM',
+      'The backward direction of events',
+      'An error that occurs during events',
+    ],
+    correctAnswer: 1,
+  },
+];
+
 export const module1Data: Module = {
   id: 1,
   title: 'Module 1: Events in JavaScript',
@@ -135,9 +194,19 @@ export const module1Data: Module = {
       content: 'section-1-1-conceptual',
       questions: section1_1Questions,
     },
+    {
+      id: 3,
+      title: 'Module 1 Posttest',
+      description: 'Test your knowledge of JavaScript events',
+      isLocked: true,
+      progress: 0,
+      pretestRequired: false,
+      content: 'posttest',
+      questions: module1PosttestQuestions,
+    },
   ],
   overallProgress: 0,
   isStarted: false,
 };
 
-export { module1PretestQuestions, section1_1Questions };
+export { module1PretestQuestions, section1_1Questions, module1PosttestQuestions };
