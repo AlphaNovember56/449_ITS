@@ -36,8 +36,8 @@ function App() {
   };
 
   return (
-    <Router basename="/449_ITS">
-      <Routes>
+    <Router basename={import.meta.env.BASE_URL}>
+        <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/module/1" element={<Module1 />} />
         <Route
