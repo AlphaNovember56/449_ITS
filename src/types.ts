@@ -28,6 +28,8 @@ export interface Module {
   pretestResult?: PretestResult;
   isStarted: boolean;
   pretestQuestions?: Question[]; // Module-specific pretest questions
+  posttestQuestions?: Question[]; // Module-specific posttest questions
+  posttestResult?: PretestResult; // Reusing PretestResult for posttest results
 }
 
 export interface UserProgress {

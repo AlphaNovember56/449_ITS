@@ -198,7 +198,7 @@ export const module1Data: Module = {
       id: 3,
       title: 'Module 1 Posttest',
       description: 'Test your knowledge of JavaScript events',
-      isLocked: true,
+      isLocked: false,
       progress: 0,
       pretestRequired: false,
       content: 'posttest',
